@@ -2,7 +2,9 @@
   "name": "wuzzuf-assessment",
   "version": "0.1.0",
   "private": true,
+  "author": "Maged Mohamed <magedmohammed16@gmail.com>",
   "dependencies": {
+    "@material-ui/core": "^4.9.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -30,5 +32,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Migggz/Books-App"
+  },
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
   }
 }
