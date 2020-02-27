@@ -4,12 +4,20 @@ import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 import { CssBaseline, ThemeProvider } from "@material-ui/core"
 import theme from "./theme"
+import { Provider } from "react-redux"
+import { ConnectedRouter } from "connected-react-router"
+import configureStore, { history } from "./store"
+
+const store = configureStore(/* initial state */)
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
     <CssBaseline />
-    <App />
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
+    </Provider>
   </ThemeProvider>,
   document.getElementById("root")
 )
