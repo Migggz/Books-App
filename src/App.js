@@ -3,6 +3,7 @@ import { Button } from "@material-ui/core"
 function App() {
   return (
     <div className="App">
+      Testting Husky and Netlify
       <a
         color="inherit"
         target="_blank"
