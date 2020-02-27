@@ -2,23 +2,19 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
-import { CssBaseline, ThemeProvider } from "@material-ui/core"
-import theme from "./theme"
 import { Provider } from "react-redux"
 import { ConnectedRouter } from "connected-react-router"
 import configureStore, { history } from "./store"
+import "./assets/stylesheets/main.scss"
 
-const store = configureStore(/* initial state */)
+const store = configureStore()
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
-    </Provider>
-  </ThemeProvider>,
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <App />
+    </ConnectedRouter>
+  </Provider>,
   document.getElementById("root")
 )
 

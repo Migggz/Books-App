@@ -1,0 +1,49 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-size: 10px;
+  height: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.333;
+  position: relative;
+  overflow-x: hidden;
+  cursor: default;
+  font-weight: normal;
+  direction: ltr;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a,
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
