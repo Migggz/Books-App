@@ -1,16 +1,17 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { rgba } from "../../utils/style-utils"
 
 export const HeaderWrapper = styled.header`
   height: 80px;
   width: 100%;
-  background: #3498db;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
+  background: #3f72af;
+  box-shadow: 0px 2px 10px ${rgba("#000", 0.3)};
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 `
 export const Logo = styled(Link)`
-  font-size: 2rem;
+  font-size: 2.8rem;
   color: #fff;
 `

@@ -4,7 +4,6 @@ export const loadPersistedState = () => {
   try {
     const serializedState = localStorage.getItem(BOOKS_STORE)
     if (serializedState === null) return undefined
-    console.log("LSALDASLSAD", JSON.parse(serializedState))
     return JSON.parse(serializedState)
   } catch (err) {
     console.log("Error Load Persisted State: ", err)

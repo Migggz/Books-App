@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom"
 import Layout from "./containers/Layout"
 import { connect } from "react-redux"
 import { getInitialData } from "./store/actions/initialDataAction"
+import Loading from "./components/Loading"
 
 class App extends PureComponent {
   componentDidMount() {
@@ -13,15 +14,14 @@ class App extends PureComponent {
 
   render() {
     const { initialData } = this.props
-    if (initialData.isLoading) return <h1>LOAAAAAAAAAADING</h1>
+    if (initialData.isLoading) return <Loading />
 
     return (
       <Layout>
         <Switch>
-          <Route render={() => <div>Book Store Home Page</div>} />
-          <Route exact path="/book" render={() => <div>Book Page</div>} />
-          <Route exact path="/author" render={() => <div>Author Page</div>} />
-          <Route exact path="/category" render={() => <div>Book Page</div>} />
+          <Route exact path="/book/:id" render={() => <div>Book Page</div>} />
+          <Route exact path="/author/:authorId" render={() => <div>Author Page</div>} />
+          <Route exact path="/category/:categoryId" render={() => <div>Category Page</div>} />
           <Route exact path="/" render={() => <div>Home</div>} />
         </Switch>
       </Layout>
