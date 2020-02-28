@@ -26,10 +26,9 @@ class Layout extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ books, authors, categories }) => ({
+const mapStateToProps = ({ authors, categories }) => ({
   authors,
-  categories,
-  books
+  categories
 })
 
 export default connect(mapStateToProps)(Layout)
