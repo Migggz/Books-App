@@ -8,7 +8,8 @@ import {
   Desc,
   Footer,
   PageNumber,
-  PublishYear
+  PublishYear,
+  BoldText
 } from "./Book.styled"
 
 export default function Book({ id, image, title, description, pagesNumber, publishYear }) {
@@ -27,7 +28,7 @@ export default function Book({ id, image, title, description, pagesNumber, publi
           </div>
           <Footer>
             <PageNumber>
-              <bold>Page Num:</bold>
+              <BoldText>Page Num:</BoldText>
               {pagesNumber}
             </PageNumber>
             <PublishYear>

@@ -51,14 +51,14 @@ export const Footer = styled.div`
   border-top: 1px solid #eee;
   padding-top: 10px;
 `
+export const BoldText = styled.span`
+  font-weight: 500;
+  color: #444;
+  margin-right: 5px;
+`
 export const PageNumber = styled.div`
   white-space: nowrap;
   color: #555;
-  bold {
-    font-weight: 500;
-    color: #444;
-    margin-right: 5px;
-  }
 `
 export const PublishYear = styled.div`
   white-space: nowrap;
