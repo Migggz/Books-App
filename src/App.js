@@ -6,6 +6,7 @@ import { getInitialData } from "./store/actions/initialDataAction"
 import Loading from "./components/Loading"
 import BookListing from "./containers/BookListing"
 import BookPage from "./containers/BookPage"
+import AuthorPage from "./containers/AuthorPage"
 import PrivateRoute from "./containers/PrivateRoute"
 
 class App extends PureComponent {
@@ -28,7 +29,7 @@ class App extends PureComponent {
           <PrivateRoute exact path="/book/:bookId/edit" render={props => <p>Edit Book</p>} />
           {/* Author Routes */}
           <PrivateRoute exact path="/author/new" render={props => <p>Author New</p>} />
-          <Route exact path="/author/:authorId" render={props => <p>author page</p>} />
+          <Route exact path="/author/:authorId" render={props => <AuthorPage {...props} />} />
           <PrivateRoute exact path="/author/:authorId/edit" render={props => <p>Author Edit</p>} />
           {/* Categories Routes */}
           <PrivateRoute exact path="/category/new" render={props => <p>category New</p>} />

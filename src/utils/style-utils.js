@@ -20,25 +20,43 @@ export const rgba = (hex, alpha) => {
   return `rgba(${color.r}, ${color.g}, ${color.b}, ${alpha})`
 }
 
-export const resetButton = () =>
-  `
-    border: none;
-    outline: 0;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
+export const resetButton = () => `
+  border: none;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
 
-    &::-moz-focus-inner {
-        border: 0;
-        padding: 0;
-    }
+  &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+  }
 
-    &:hover {
-      cursor: pointer;
-    }
-  `
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const generalEditButton = () => `
+  font-size: 1.4rem;
+  color: #fff;
+  background: #3fc1c9;
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 4px 10px;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 15px;
+  span {
+    line-height: 1.1;
+    display: inline-block;
+    margin-left: 5px;
+  }
+`

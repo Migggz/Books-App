@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import FallbackImg from "../FallbackImg"
 import { Link } from "react-router-dom"
+import { generalEditButton } from "../../utils/style-utils"
 
 export const Wrapper = styled.article``
 export const Inner = styled.div`
@@ -9,22 +10,7 @@ export const Inner = styled.div`
   margin-bottom: 20px;
 `
 export const EditBook = styled(Link)`
-  font-size: 1.4rem;
-  color: #fff;
-  background: #3fc1c9;
-  border-radius: 4px;
-  font-weight: 500;
-  padding: 4px 10px;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  margin-left: 15px;
-  span {
-    line-height: 1.1;
-    display: inline-block;
-    margin-left: 5px;
-  }
+  ${generalEditButton()}
 `
 export const Data = styled.div`
   flex: 1 1 100%;

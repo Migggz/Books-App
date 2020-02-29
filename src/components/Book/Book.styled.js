@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
 import FallbackImg from "../FallbackImg"
+import { generalEditButton } from "../../utils/style-utils"
 
 export const BookWrapper = styled.article`
   margin-bottom: 20px;
@@ -12,7 +13,6 @@ export const BookWrapper = styled.article`
     margin-bottom: 0;
   }
 `
-
 export const StyledLink = styled(Link)`
   display: flex;
   color: #333;
@@ -36,6 +36,7 @@ export const Title = styled.h3`
   max-height: ${1.33333 * 18 * 2}px;
   overflow: hidden;
   margin-bottom: 10px;
+  max-width: 90%;
 `
 export const Desc = styled.p`
   font-size: 1.6rem;
@@ -70,4 +71,10 @@ export const PublishYear = styled.div`
     color: #555;
     margin-left: 5px;
   }
+`
+export const EditBook = styled(Link)`
+  ${generalEditButton()}
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `

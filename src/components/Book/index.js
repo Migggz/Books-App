@@ -9,12 +9,28 @@ import {
   Footer,
   PageNumber,
   PublishYear,
-  BoldText
+  BoldText,
+  EditBook
 } from "./Book.styled"
+import { FaEdit } from "react-icons/fa"
 
-export default function Book({ id, image, title, description, pagesNumber, publishYear }) {
+export default function Book({
+  editMode,
+  id,
+  image,
+  title,
+  description,
+  pagesNumber,
+  publishYear
+}) {
   return (
     <BookWrapper>
+      {editMode && (
+        <EditBook to={`/book/${id}/edit`}>
+          <FaEdit />
+          <span>Edit</span>
+        </EditBook>
+      )}
       <StyledLink to={`/book/${id}`}>
         <BookImg src={image} alt={title} />
         <Inner>

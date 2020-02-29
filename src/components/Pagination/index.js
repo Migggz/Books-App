@@ -8,6 +8,7 @@ export default function Pagination({ onPageChange, itemsCount, itemsPerPage }) {
     <Wrapper>
       <RCPagination
         className="pagination"
+        hideOnSinglePage={true}
         total={itemsCount}
         pageSize={itemsPerPage}
         onChange={onPageChange}

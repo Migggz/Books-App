@@ -5,7 +5,8 @@ import Pagination from "../components/Pagination"
 
 class BookListing extends PureComponent {
   state = {
-    pageSize: 5,
+    // ! Anti-Pattern to copying props to state, but it is safe in this case
+    pageSize: this.props.pageSize || 5,
     currentPage: 1
   }
   handlePageChange = current => {
@@ -15,7 +16,7 @@ class BookListing extends PureComponent {
   }
 
   render() {
-    const { books } = this.props
+    const { books, editMode } = this.props
     const { currentPage, pageSize } = this.state
 
     // Logic Behind Pagination
@@ -26,7 +27,7 @@ class BookListing extends PureComponent {
     return (
       <main>
         {currentBooks.map(book => (
-          <Book key={book.id} {...book} />
+          <Book editMode={editMode} key={book.id} {...book} />
         ))}
         <Pagination
           onPageChange={this.handlePageChange}
@@ -38,8 +39,9 @@ class BookListing extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ books }) => ({
-  books
+const mapStateToProps = ({ books, editMode }, ownProps) => ({
+  books: ownProps.books || books,
+  editMode
 })
 
 export default connect(mapStateToProps)(BookListing)
