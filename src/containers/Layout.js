@@ -2,14 +2,19 @@ import React, { PureComponent, Fragment } from "react"
 import Header from "../components/Header"
 import SidebarBox from "../components/SidebarBox"
 import { connect } from "react-redux"
+import { setEditMode } from "../store/actions/editModeAction"
 
 class Layout extends PureComponent {
+  handleEditMode = () => {
+    this.props.setEditMode(!this.props.editMode)
+  }
+
   render() {
-    const { children, categories, authors } = this.props
+    const { children, categories, authors, editMode } = this.props
 
     return (
       <Fragment>
-        <Header />
+        <Header editMode={editMode} onEditMode={this.handleEditMode} />
         <div className="container">
           <div className="row">
             <div className="col-3">
@@ -26,9 +31,14 @@ class Layout extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ authors, categories }) => ({
+const mapStateToProps = ({ authors, categories, editMode }) => ({
   authors,
-  categories
+  categories,
+  editMode
 })
 
-export default connect(mapStateToProps)(Layout)
+const mapDispatchToProps = {
+  setEditMode
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout)

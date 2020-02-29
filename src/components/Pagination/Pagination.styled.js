@@ -15,7 +15,6 @@ export const Wrapper = styled.section`
       background: #0c7b93;
     }
     .rc-pagination-disabled {
-      /* opacity: 0.4; */
       background: #ccc;
     }
     li {

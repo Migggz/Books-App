@@ -19,3 +19,26 @@ export const rgba = (hex, alpha) => {
   const color = hexToRgb(hex)
   return `rgba(${color.r}, ${color.g}, ${color.b}, ${alpha})`
 }
+
+export const resetButton = () =>
+  `
+    border: none;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  `

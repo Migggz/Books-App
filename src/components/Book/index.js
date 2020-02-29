@@ -13,14 +13,10 @@ import {
 } from "./Book.styled"
 
 export default function Book({ id, image, title, description, pagesNumber, publishYear }) {
-  const setDefault = e => {
-    e.target.src = "https://via.placeholder.com/250x200?text=Image+Broken+:("
-  }
-
   return (
     <BookWrapper>
       <StyledLink to={`/book/${id}`}>
-        <BookImg onError={setDefault} src={image} alt={title} />
+        <BookImg src={image} alt={title} />
         <Inner>
           <div>
             <Title>{title}</Title>

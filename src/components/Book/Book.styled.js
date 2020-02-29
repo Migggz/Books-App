@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import FallbackImg from "../FallbackImg"
 
 export const BookWrapper = styled.article`
   margin-bottom: 20px;
@@ -23,7 +24,7 @@ export const Inner = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `
-export const BookImg = styled.img`
+export const BookImg = styled(FallbackImg)`
   display: block;
   min-width: 250px;
   max-width: 250px;
