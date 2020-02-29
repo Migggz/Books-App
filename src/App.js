@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react"
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch, Redirect } from "react-router-dom"
 import Layout from "./containers/Layout"
 import { connect } from "react-redux"
 import { getInitialData } from "./store/actions/initialDataAction"
@@ -8,6 +8,7 @@ import BookListing from "./containers/BookListing"
 import BookPage from "./containers/BookPage"
 import AuthorPage from "./containers/AuthorPage"
 import PrivateRoute from "./containers/PrivateRoute"
+import BookForm from "./containers/BookForm"
 
 class App extends PureComponent {
   componentDidMount() {
@@ -24,9 +25,9 @@ class App extends PureComponent {
       <Layout>
         <Switch>
           {/* Book Routes */}
-          <Route exact path="/book/new" render={props => <p>New Book</p>} />
+          <Route exact path="/book/new" render={props => <BookForm {...props} />} />
           <Route exact path="/book/:bookId" render={props => <BookPage {...props} />} />
-          <PrivateRoute exact path="/book/:bookId/edit" render={props => <p>Edit Book</p>} />
+          <PrivateRoute exact path="/book/:bookId/edit" render={props => <BookForm {...props} />} />
           {/* Author Routes */}
           <PrivateRoute exact path="/author/new" render={props => <p>Author New</p>} />
           <Route exact path="/author/:authorId" render={props => <AuthorPage {...props} />} />
@@ -41,6 +42,7 @@ class App extends PureComponent {
           />
           {/* Home Page */}
           <Route exact path="/" render={() => <BookListing />} />
+          <Redirect to="/" />
         </Switch>
       </Layout>
     )

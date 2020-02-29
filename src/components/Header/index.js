@@ -1,5 +1,6 @@
 import React from "react"
-import { HeaderWrapper, Logo, EditBtn, Ribbon } from "./Header.styled"
+import { HeaderWrapper, Logo, EditBtn, Ribbon, ButtonsWrapper } from "./Header.styled"
+import NavigationLink from "../NavigationLink"
 
 export default function Header({ editMode, onEditMode }) {
   return (
@@ -12,9 +13,18 @@ export default function Header({ editMode, onEditMode }) {
                 <Logo to="/">Book Store</Logo>
                 {editMode && <Ribbon>Edit Mode</Ribbon>}
               </h1>
-              <EditBtn editMode={editMode} onClick={onEditMode}>
-                {editMode ? "Exit Edit Mode" : "Edit Mode"}
-              </EditBtn>
+              <ButtonsWrapper>
+                <NavigationLink to="/book/new">Add Book</NavigationLink>
+                <NavigationLink to="/author/new" disabled={!editMode}>
+                  Add Author
+                </NavigationLink>
+                <NavigationLink to="/category/new" disabled={!editMode}>
+                  Add Category
+                </NavigationLink>
+                <EditBtn editMode={editMode} onClick={onEditMode}>
+                  {editMode ? "Exit Edit Mode" : "Edit Mode"}
+                </EditBtn>
+              </ButtonsWrapper>
             </div>
           </div>
         </div>

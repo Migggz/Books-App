@@ -7,9 +7,11 @@ import { Redirect } from "react-router-dom"
 class BookPage extends PureComponent {
   render() {
     const { editMode, book, authors, categories, location } = this.props
+    if (!book) return <Redirect to="/" />
+
     const author = find(authors, author => author.id === book.author)
     const category = find(categories, category => category.id === book.category)
-    if (!book) return <Redirect to="/" />
+
     return (
       <BookPreview
         book={book}

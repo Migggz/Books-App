@@ -33,10 +33,15 @@ export const EditBtn = styled.button`
   background: ${({ editMode }) => (editMode ? "#fff" : "#fc5185")};
   border-radius: 4px;
   color: ${({ editMode }) => (editMode ? "#333" : "#fff")};;
-  padding: 0 20px;
+  padding: 10px 20px;
   font-weight: 500;
   transition: 0.3s ease all;
+  margin-left: 20px;
   &:active {
     background: #e44b79;
   }
+`
+export const ButtonsWrapper = styled.div`
+  display: inline-flex;
+  align-items: center;
 `

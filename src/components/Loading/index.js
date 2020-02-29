@@ -1,5 +1,5 @@
 import React from "react"
-import { Loader, Spinner } from "./Loading.styled"
+import { Loader, Spinner, ImgSpinner } from "./Loading.styled"
 
 export default function Loading() {
   return (
@@ -8,3 +8,9 @@ export default function Loading() {
     </Loader>
   )
 }
+
+export const ImageLoadingSpinner = () => (
+  <ImgSpinner>
+    <Spinner />
+  </ImgSpinner>
+)

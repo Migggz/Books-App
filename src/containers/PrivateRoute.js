@@ -2,9 +2,10 @@ import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { useSelector } from "react-redux"
 
-const PrivateRoute = ({ children, ...rest }) => {
+const PrivateRoute = props => {
   const editMode = useSelector(state => state.editMode)
-  return <Route {...rest} render={() => (editMode ? children : <Redirect to="/" />)} />
+  const render = editMode ? props.render : () => <Redirect to="/" />
+  return <Route {...props} render={render} />
 }
 
 export default PrivateRoute

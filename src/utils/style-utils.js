@@ -60,3 +60,11 @@ export const generalEditButton = () => `
     margin-left: 5px;
   }
 `
+export const headerNewButton = () => `
+  color: #fff;
+  background: #3fc1c9;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  padding: 5px 15px;
+  margin-right: 10px;
+`

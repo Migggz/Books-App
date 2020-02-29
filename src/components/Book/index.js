@@ -1,8 +1,8 @@
 import React from "react"
 import {
   BookWrapper,
-  BookImg,
   Title,
+  BookImg,
   StyledLink,
   Inner,
   Desc,
