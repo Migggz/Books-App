@@ -1,9 +1,14 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const Wrapper = styled.article``
 export const Name = styled.h2`
   font-size: 2.2rem;
   margin-bottom: 5px;
+  ${({ mb }) =>
+    mb &&
+    css`
+      margin-bottom: ${mb}px;
+    `}
 `
 export const JobTitle = styled.span`
   display: block;

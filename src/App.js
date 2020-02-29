@@ -10,6 +10,8 @@ import AuthorPage from "./containers/AuthorPage"
 import PrivateRoute from "./containers/PrivateRoute"
 import BookForm from "./containers/BookForm"
 import AuthorForm from "./containers/AuthorForm"
+import CategoryPage from "./containers/CategoryPage"
+import CategoryForm from "./containers/CategoryForm"
 
 class App extends PureComponent {
   componentDidMount() {
@@ -38,12 +40,12 @@ class App extends PureComponent {
             render={props => <AuthorForm {...props} />}
           />
           {/* Categories Routes */}
-          <PrivateRoute exact path="/category/new" render={props => <p>category New</p>} />
-          <Route exact path="/category/:categoryId" render={props => <p>category page</p>} />
+          <PrivateRoute exact path="/category/new" render={props => <CategoryForm {...props} />} />
+          <Route exact path="/category/:categoryId" render={props => <CategoryPage {...props} />} />
           <PrivateRoute
             exact
             path="/category/:categoryId/edit"
-            render={props => <p>category Edit</p>}
+            render={props => <CategoryForm {...props} />}
           />
           {/* Home Page */}
           <Route exact path="/" render={() => <BookListing />} />

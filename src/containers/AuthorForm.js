@@ -34,7 +34,7 @@ class AuthorForm extends PureComponent {
 const mapStateToProps = ({ editMode, authors }, ownProps) => ({
   authors,
   selectedAuthor: editMode
-    ? ownProps.match.path === "/book/new"
+    ? ownProps.match.path === "/author/new"
       ? null
       : find(authors, author => author.id === ownProps.match.params.authorId)
     : null
