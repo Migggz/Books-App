@@ -26,7 +26,7 @@ export default function BookFormPreview({ onSubmit, authors, categories, selecte
 
   return (
     <section>
-      <Title>{selectedBook ? selectedBook.title : "Add new Book"}</Title>
+      <Title>{selectedBook ? "Edit Book: " + selectedBook.title : "Add new Book"}</Title>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <input
           hidden

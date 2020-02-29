@@ -9,6 +9,7 @@ import BookPage from "./containers/BookPage"
 import AuthorPage from "./containers/AuthorPage"
 import PrivateRoute from "./containers/PrivateRoute"
 import BookForm from "./containers/BookForm"
+import AuthorForm from "./containers/AuthorForm"
 
 class App extends PureComponent {
   componentDidMount() {
@@ -29,9 +30,13 @@ class App extends PureComponent {
           <Route exact path="/book/:bookId" render={props => <BookPage {...props} />} />
           <PrivateRoute exact path="/book/:bookId/edit" render={props => <BookForm {...props} />} />
           {/* Author Routes */}
-          <PrivateRoute exact path="/author/new" render={props => <p>Author New</p>} />
+          <PrivateRoute exact path="/author/new" render={props => <AuthorForm {...props} />} />
           <Route exact path="/author/:authorId" render={props => <AuthorPage {...props} />} />
-          <PrivateRoute exact path="/author/:authorId/edit" render={props => <p>Author Edit</p>} />
+          <PrivateRoute
+            exact
+            path="/author/:authorId/edit"
+            render={props => <AuthorForm {...props} />}
+          />
           {/* Categories Routes */}
           <PrivateRoute exact path="/category/new" render={props => <p>category New</p>} />
           <Route exact path="/category/:categoryId" render={props => <p>category page</p>} />
